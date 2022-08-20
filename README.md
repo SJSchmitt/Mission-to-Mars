@@ -14,4 +14,4 @@ The scraped data was stored in a Python dictionary that was then transmitted to 
 
 ## Creating a Webpage
 
-Flask and Bootstrap enabled us to quickly and easily make a nice looking website.  Flask allows us to add our `scrape_all()` function directly to our site
+Flask and Bootstrap enabled us to quickly and easily make a nice looking website.  Flask allows us to add our `scrape_all()` function directly to [our site](Mission-to-Mars-Site.png), which we display with a button.  When clicked, this button redoes the scraping, to ensure the most recent Mars News is showing.  We also used Bootstrap to make the site responsive, so it could be viewed on various types of devices, including phones, tablets, and computers.  Our [index.html](templates/index.html) contains the full details of the aesthetic work done with Bootstrap and raw HTML.
