@@ -30,7 +30,7 @@ def mars_news(browser):
     # Visit the mars nasa news site
     url = 'https://redplanetscience.com'
     browser.visit(url)
-    # Optional delay for loading the page
+    # Delay for loading the page
     browser.is_element_present_by_css('div.list_text', wait_time=1)
 
     # parse html
@@ -79,7 +79,7 @@ def featured_image(browser):
     return img_url
 
 def mars_facts():
-    # Add try/except for error handling
+    # error handling
     try:
         # Use 'read_html' to scrape the facts table into a dataframe
         df = pd.read_html('https://galaxyfacts-mars.com')[0]
@@ -91,23 +91,23 @@ def mars_facts():
     df.columns=['Description', 'Mars', 'Earth']
     df.set_index('Description', inplace=True)
 
-    # Convert dataframe into HTML format, add bootstrap
+    # Convert dataframe into HTML format
     return df.to_html()
 
 def hemispheres(browser):
-    # 1. Use browser to visit the URL 
+    # Use browser to visit the URL 
     url = 'https://marshemispheres.com/'
     browser.visit(url)
 
     html = browser.html
     hemi_soup = soup(html, 'html.parser')
 
-    # 2. Create a list to hold the images and titles.
+    # Create a list to hold the images and titles.
     hemisphere_image_urls = []
 
     links = hemi_soup.find_all('h3')
 
-    # 3. Write code to retrieve the image urls and titles for each hemisphere.
+    # Write code to retrieve the image urls and titles for each hemisphere.
     for link in links[0:-1]:
         try:
             # move to the next page
